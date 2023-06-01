@@ -22,7 +22,7 @@ let eGrundkarteTirol = {
         attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`
     }),
     winter: L.tileLayer(
-        "https://wmts.kartetirol.at/gdi_winter/{z}/{x}/{y}.png", {
+        "https://wmts.kartetirol.t/gdi_winter/{z}/{x}/{y}.png", {
         attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`
     }),
     ortho: L.tileLayer("https://wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png", {
@@ -57,3 +57,9 @@ let layerControl = L.control.layers({
 L.control.scale({
     imperial: false,
 }).addTo(map);
+
+//GPX Track visualisieren
+let controlElevation = L.control.elevation({
+
+}).addTo(map);
+controlElevation.load("data/etappe29.gpx")
