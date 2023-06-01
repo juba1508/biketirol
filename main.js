@@ -77,3 +77,11 @@ for (let etappe of ETAPPEN) {
     }
     pulldown.innerHTML += `<option ${status} value="${etappe.user}">Etappe ${etappe.nr}: ${etappe.etappe}</option>`
 }
+
+//auf Änderung im Pulldown reagiere
+pulldown.onchange = function(evt) {
+    //console.log(pulldown.value);
+    let url = `https://${pulldown.value}.github.io/biketirol`;
+    //console.log(url);
+    window.location.href = url; 
+}
